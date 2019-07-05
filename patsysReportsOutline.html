@@ -9,8 +9,35 @@
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Prevent Child Abuse - New Jersey" />
 <meta  name="description" content="Database instructions for the New Jersey Parents As Teachers Database (PATSys)"
- />
+ /> 
 <style type="text/css">
+
+#back2Top {
+    width: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+    background-color: #DDD;
+    color: #555;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+}
+#back2Top:hover {
+    background-color: #DDF;
+    color: #000;
+}
+
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
@@ -91,6 +118,37 @@
   /*]]>*/-->
 </style>
 <style>#content { max-width: 800px; margin: 0 auto; } img{ max-width: 600px }</style>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+<!-- Scroll to top when arrow up clicked -->
+
+<script type="text/javascript">
+    jQuery(window).on('load', function () {
+        document.body.style.cursor = 'default';
+    });
+
+    jQuery(window).scroll(function () {
+        var height = jQuery(window).scrollTop();
+        if (height > 100) {
+            jQuery('#back2Top').fadeIn();
+        } else {
+            jQuery('#back2Top').fadeOut();
+        }
+    });
+    jQuery(document).ready(function () {
+        jQuery("#back2Top").click(function (event) {
+            event.preventDefault();
+            jQuery("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });
+
+    });
+
+</script>
+
+
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -4731,6 +4789,7 @@ In its broadest use, “data integrity” refers to the accuracy and consistency
 </div>
 </div>
 </div>
+<a id="back2Top" title="Back to top" href="#">&#10148;</a>
 <div id="postamble" class="status">
 <p class="author">Author: Prevent Child Abuse - New Jersey</p>
 <p class="date">Created: 2019-06-30 Sun 23:23</p>
